@@ -12,7 +12,13 @@ def remove_duplicates(message):
 
 
 def main():
-    print(remove_duplicates('wwaldaadicffenn'))
+    with open('data.txt', 'r') as file:
+        data = file.read()
+        res = remove_duplicates(data)
+        print(res)
+        res_file = open("result.txt", "w+")
+        res_file.write(res)
+        res_file.close()
 
 
 if __name__ == '__main__':
