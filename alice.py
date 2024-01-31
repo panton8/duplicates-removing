@@ -1,3 +1,5 @@
+import sys
+
 
 def remove_duplicates(message):
     symbol_stack = []
@@ -12,7 +14,10 @@ def remove_duplicates(message):
 
 
 def main():
-    with open('data.txt', 'r') as file:
+
+    file_path = sys.argv[1]
+
+    with open(file_path, 'r') as file:
         data = file.read()
         res = remove_duplicates(data)
         print(res)
